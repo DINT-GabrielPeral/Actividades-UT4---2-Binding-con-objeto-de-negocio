@@ -1,4 +1,6 @@
-    class Superheroe
+using System.Collections.Generic;
+
+class Superheroe
     {
         public string Nombre { get; set; }
         public string Imagen { get; set; }

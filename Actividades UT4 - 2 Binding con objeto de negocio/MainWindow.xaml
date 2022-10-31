@@ -6,7 +6,20 @@
         xmlns:local="clr-namespace:Actividades_UT4___2_Binding_con_objeto_de_negocio"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel LastChildFill="true">
+        <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+            <TextBlock DockPanel.Dock="Left" Text="{Binding Path="Nombre"}"></TextBlock>
+            <Image Source="" Width="30" DockPanel.Dock="Right"/>
+        </DockPanel>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" DockPanel.Dock="Bottom">
+            <Image Source="/recursos/arrow.png"  Width="30"/>
+            <TextBlock Text="">1/3</TextBlock>
+            <Image Width="30">
+                <Image.Source>
+                    <BitmapImage UriSource="recursos/arrow.png" Rotation="Rotate180"></BitmapImage>
+                </Image.Source>
+            </Image>
+        </StackPanel>
+        <Image Source="" Margin="10"></Image>
+    </DockPanel>
 </Window>
