@@ -20,9 +20,29 @@ namespace Actividades_UT4___2_Binding_con_objeto_de_negocio
     /// </summary>
     public partial class MainWindow : Window
     {
+        int nSuperheroe=0;
+        List<Superheroe> superheroes = Superheroe.GetSamples();
         public MainWindow()
         {
             InitializeComponent();
+
+            
+            Padre_DockPanel.DataContext = superheroes[nSuperheroe];
+        }
+
+        private void Arrow_Click(object sender, MouseButtonEventArgs e)
+        {
+            Image imagen = (Image)sender;
+            if(nSuperheroe<2&&imagen.Tag.ToString()=="derecha")
+            {
+                nSuperheroe++;
+                
+            }else if(nSuperheroe > 0 && imagen.Tag.ToString() == "izquierda")
+            {
+                nSuperheroe--;  
+            }
+            Padre_DockPanel.DataContext = superheroes[nSuperheroe];
+            textBlockNumero.Text = ((nSuperheroe+1) + "/3");
         }
     }
 }
